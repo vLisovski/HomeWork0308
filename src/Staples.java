@@ -11,32 +11,18 @@ public class Staples {
 
         for (int i = 0; i < chars.length; i++) {
 
-            if (chars[i] == '{' || chars[i] == '(' || chars[i] == '[' || chars[i]=='<'
-               || chars[i] == '}' || chars[i] == ')' || chars[i] == ']'||chars[i]=='>') {
+            if (chars[i] == '{' || chars[i] == '(' || chars[i] == '[' || chars[i]=='<') {
 
                 characters.push(chars[i]);
+
+            }else if((chars[i] == '}' || chars[i] == ')' || chars[i] == ']'||chars[i]=='>')){
+
+                characters.pop();
             }
 
         }
 
-        //region как проверить верный порядок???
-
-
-        //не догадался чего-то я блин
-
-
-        //endregion
-
-
-        if(characters.size()%2!=0){
-
-            return false;
-
-        }else{
-
-            return true;
-        }
-
+        return characters.size()==0;
 
     }
 
